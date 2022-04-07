@@ -9,8 +9,7 @@
     </div>
     {% for episode in episodes %}
 		<div>
-			<p>Episode {{ episode.number }}</p>
-			{# <a href="{{ path("program_show", { id: program.id }) }}">Voir la fiche</a> #}
+			<a href="{{ path("program_episode_show", { episode: episode.id, season: season.id, program: season.program.id}) }}">Episode {{ episode.number }}</a>
 		</div>
 	{% else %}
 		<h2>Aucun episode trouvé.</h2>
