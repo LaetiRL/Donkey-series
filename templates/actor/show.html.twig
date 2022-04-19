@@ -1,0 +1,18 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{{id.name}}{% endblock %}
+
+{% block body %}
+<h1>{{id.name}}</h1>
+	{% for p in programs %}
+		<div>
+			<a href="{{ path("program_show", { id: p.id }) }}"><p>{{ p.title }}</p></a>
+		</div>
+	{% else %}
+		Aucune série trouvée.
+	{% endfor %}
+	
+	 <a href="{{ path('actor') }}">
+        Retour à la liste des acteurs
+    </a>
+{% endblock %}
